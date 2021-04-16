@@ -8,6 +8,14 @@ function getProducts() {
   fetch(endPoint)
   .then(response => response.json())
   .then(products => {
-    console.log(products);
+    // we don't want to console.log, we want to render the data
+    // console.log(products);
+    Products.data.forEach (product => {
+      // our data is nested- refer to json info to see how it's nested
+      const ProductInfo = `
+        <div data-id=${product.id}>
+          <h4>${product.attributes.name}</h4>
+        </div> `
+    })
   })
 }
