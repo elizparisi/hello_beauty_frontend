@@ -15,7 +15,11 @@ function getProducts() {
       const ProductInfo = `
         <div data-id=${product.id}>
           <h4>${product.attributes.name}</h4>
-        </div> `
+          <p>${product.attributes.category}</p>
+          <p>${product.attributes.look.name}</p>
+        </div>
+        <br>
+        <br>`;
     })
   })
 }
