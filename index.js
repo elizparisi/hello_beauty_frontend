@@ -10,7 +10,7 @@ function getProducts() {
   .then(products => {
     // we don't want to console.log, we want to render the data
     // console.log(products);
-    Products.data.forEach (product => {
+    products.data.forEach (product => {
       // our data is nested- refer to json info to see how it's nested
       const productInfo = `
         <div data-id=${product.id}>
