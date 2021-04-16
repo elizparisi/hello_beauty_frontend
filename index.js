@@ -12,7 +12,7 @@ function getProducts() {
     // console.log(products);
     Products.data.forEach (product => {
       // our data is nested- refer to json info to see how it's nested
-      const ProductInfo = `
+      const productInfo = `
         <div data-id=${product.id}>
           <h4>${product.attributes.name}</h4>
           <p>${product.attributes.category}</p>
@@ -20,6 +20,8 @@ function getProducts() {
         </div>
         <br>
         <br>`;
+
+        document.querySelector('#product-container').innerHTML += productInfo
     })
   })
 }
