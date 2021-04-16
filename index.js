@@ -1,8 +1,9 @@
 
+
 document.addEventListener('DOMContentLoaded', () => {
-  fetch('http://localhost:3000/api/v1/looks')
+  fetch('http://localhost:3000/api/v1/products')
   .then(response => response.json())
-  .then(looks => {
-    console.log(looks);
+  .then(products => {
+    console.log(products);
   })
 })
