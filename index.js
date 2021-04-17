@@ -39,5 +39,9 @@ function createFormHandler(event) {
 }
 
 function postFetch(look_id, category, name) {
-  console.log(look_id, category, name);
+  // console.log(look_id, category, name);--works as expected
+  fetch(endPoint, {
+    // POST request
+    method: "POST",
+  })
 }
