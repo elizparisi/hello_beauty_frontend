@@ -43,5 +43,11 @@ function postFetch(look_id, category, name) {
   fetch(endPoint, {
     // POST request
     method: "POST",
+    headers: { "Content-Type": "application/json"},
+    body: JSON.stringify ({
+      look_id: look_id,
+      category: category,
+      name: name
+    })
   })
 }
