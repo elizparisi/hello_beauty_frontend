@@ -35,7 +35,7 @@ function createFormHandler(event) {
   const lookId = parseInt(document.querySelector('#looks').value)
   const categoryInput = document.querySelector('.category-input').value
   const nameInput = document.querySelector('.name-input').value
-
+  postFetch(lookId, categoryInput, nameInput)
 }
 
 function postFetch(look_id, category, name) {
