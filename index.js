@@ -32,5 +32,7 @@ function getProducts() {
 
 function createFormHandler(event) {
   event.preventDefault()
+  const categoryInput = document.querySelector('.category-input').value
+  const nameInput = document.querySelector('.name-input').value 
   console.log(event);
 }
