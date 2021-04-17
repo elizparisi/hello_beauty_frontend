@@ -40,15 +40,13 @@ function createFormHandler(event) {
 
 function postFetch(look_id, category, name) {
   // console.log(look_id, category, name);--works as expected
+  // make variable to hold body data, key + value are the same so only one is needed
+  const bodyData = {look_id, category, name}
   fetch(endPoint, {
     // POST request
     method: "POST",
     headers: { "Content-Type": "application/json"},
-    body: JSON.stringify ({
-      look_id: look_id,
-      category: category,
-      name: name
-    })
+    body: JSON.stringify (bodyData)
   })
   .then(response => response.json())
   .then(look => {
