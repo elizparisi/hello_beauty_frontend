@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const createLookForm = document.querySelector('#create-look-form')
 
-  createLookForm.addEventListener('submit', (event) => console.log(event))
+  createLookForm.addEventListener('submit', (event) => createFormHandler(event))
 })
 
 function getProducts() {
@@ -28,4 +28,9 @@ function getProducts() {
         document.querySelector('#product-container').innerHTML += productInfo
     })
   })
+}
+
+function createFormHandler(event) {
+  event.preventDefault()
+  console.log(event);
 }
