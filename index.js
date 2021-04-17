@@ -32,8 +32,8 @@ function getProducts() {
 
 function createFormHandler(event) {
   event.preventDefault()
-  const lookInput = document.querySelector('#looks').value
+  const lookId = parseInt(document.querySelector('#looks').value)
   const categoryInput = document.querySelector('.category-input').value
   const nameInput = document.querySelector('.name-input').value
-  console.log(event);
+
 }
