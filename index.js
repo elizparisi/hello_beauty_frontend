@@ -50,4 +50,8 @@ function postFetch(look_id, category, name) {
       name: name
     })
   })
+  .then(response => response.json())
+  .then(look => {
+    console.log(look);
+  })
 }
