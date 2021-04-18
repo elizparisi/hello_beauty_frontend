@@ -50,6 +50,18 @@ function postFetch(look_id, category, name) {
   })
   .then(response => response.json())
   .then(look => {
-    console.log(look);
+    // console.log(look);
+    const productData = product.data.attributes
+    // render JSON response
+    const productMarkup =  `
+      <div data-id=${product.id}>
+        <h4>${product.attributes.name}</h4>
+        <p>${product.attributes.category}</p>
+        <p>${product.attributes.look.name}</p>
+      </div>
+      <br>
+      <br>`;
+
+      document.querySelector('#product-container').innerHTML += productMarkup
   })
 }
