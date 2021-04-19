@@ -30,6 +30,19 @@ function getProducts() {
   })
 }
 
+function render() {
+  const productInfo = `
+    <div data-id=${product.id}>
+      <h4>${product.attributes.name}</h4>
+      <p>${product.attributes.category}</p>
+      <p>${product.attributes.look.name}</p>
+    </div>
+    <br>
+    <br>`;
+
+    document.querySelector('#product-container').innerHTML += productInfo
+}
+
 function createFormHandler(event) {
   event.preventDefault()
   const lookId = parseInt(document.querySelector('#looks').value)
@@ -53,7 +66,7 @@ function postFetch(look_id, category, name) {
     // console.log(look);
     const productData = product.data.attributes
     // render JSON response
-    const productMarkup =  `
+    const productInfo =  `
       <div data-id=${product.id}>
         <h4>${product.attributes.name}</h4>
         <p>${product.attributes.category}</p>
@@ -62,6 +75,6 @@ function postFetch(look_id, category, name) {
       <br>
       <br>`;
 
-      document.querySelector('#product-container').innerHTML += productMarkup
+      document.querySelector('#product-container').innerHTML += productInfo
   })
 }
