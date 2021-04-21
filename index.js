@@ -16,18 +16,23 @@ function getProducts() {
     // console.log(products);
     products.data.forEach (product => {
       // our data is nested- refer to json info to see how it's nested
-      const productInfo = `
-        <div data-id=${product.id}>
-          <h4>${product.attributes.name}</h4>
-          <p>${product.attributes.category}</p>
-          <p>${product.attributes.look.name}</p>
-        </div>
-        <br>
-        <br>`;
-
-        document.querySelector('#product-container').innerHTML += productInfo
+      render(product)
     })
+  .catch(error => console.log(error))
   })
+}
+
+function render(product) {
+  const productInfo = `
+    <div data-id=${product.id}>
+      <h4>${product.attributes.name}</h4>
+      <p>${product.attributes.category}</p>
+      <p>${product.attributes.look.name}</p>
+    </div>
+    <br>
+    <br>`;
+
+    document.querySelector('#product-container').innerHTML += productInfo
 }
 
 function createFormHandler(event) {
@@ -46,22 +51,23 @@ function postFetch(look_id, category, name) {
     // POST request
     method: "POST",
     headers: { "Content-Type": "application/json"},
-    body: JSON.stringify (bodyData)
+    body: JSON.stringify(bodyData)
   })
   .then(response => response.json())
-  .then(look => {
+  .then(product => {
     // console.log(look);
-    const productData = product.data.attributes
+    const productData = product.data
     // render JSON response
-    const productMarkup =  `
-      <div data-id=${product.id}>
-        <h4>${product.attributes.name}</h4>
-        <p>${product.attributes.category}</p>
-        <p>${product.attributes.look.name}</p>
-      </div>
-      <br>
-      <br>`;
-
-      document.querySelector('#product-container').innerHTML += productMarkup
+    // const productInfo =  `
+    //   <div data-id=${product.id}>
+    //     <h4>${product.attributes.name}</h4>
+    //     <p>${product.attributes.category}</p>
+    //     <p>${product.attributes.look.name}</p>
+    //   </div>
+    //   <br>
+    //   <br>`;
+    //
+    //   document.querySelector('#product-container').innerHTML += productInfo
+    render(productData)
   })
 }
