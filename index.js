@@ -18,6 +18,7 @@ function getProducts() {
     // our data is nested- refer to json info to see how it's nested
       const productInfo = `
         <div data-id=${product.id}>
+          <p>${product.attributes.category.name}</p>
           <img src=${product.attributes.original_image_url} height='200' width='250'/>
           <h4>${product.attributes.original_name}</h4>
           <p>${product.attributes.original_price}</p>
