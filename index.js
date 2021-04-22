@@ -3,9 +3,9 @@ const endPoint = 'http://localhost:3000/api/v1/products'
 document.addEventListener('DOMContentLoaded', () => {
   getProducts()
 
-  const createLookForm = document.querySelector('#create-look-form')
+  const createProductForm = document.querySelector('#create-product-form')
 
-  createLookForm.addEventListener('submit', (event) => createFormHandler(event))
+  createProductForm.addEventListener('submit', (event) => createFormHandler(event))
 })
 
 function getProducts() {
