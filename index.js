@@ -37,10 +37,17 @@ function render(product) {
 
 function createFormHandler(event) {
   event.preventDefault()
-  const lookId = parseInt(document.querySelector('#looks').value)
-  const categoryInput = document.querySelector('.category-input').value
-  const nameInput = document.querySelector('.name-input').value
-  postFetch(lookId, categoryInput, nameInput)
+  // const categoryId = parseInt(document.querySelector('#categories')
+  const categoryInput = document.querySelector('#categories').value
+  const categoryId = parseInt(categoryInput)
+  const originalNameInput = document.querySelector('#original-name-input').value
+  const originalPriceInput = document.querySelector('#original-price-input').value
+  const originalImageInput = document.querySelector('#orginal-image-input').value
+  const dupeNameInput = document.querySelector('#dupe-name-input').value
+  const dupePriceInput = document.querySelector('#dupe-price-input').value
+  const dupeImageInput = document.querySelector('#dupe-image-input').value
+
+  postFetch(categoryInput, originalNameInput, originalPriceInput, originalImageInput, dupeNameInput, dupePriceInput, dupeImageInput)
 }
 
 function postFetch(look_id, category, name) {
