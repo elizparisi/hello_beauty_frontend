@@ -70,7 +70,7 @@ function createFormHandler(event) {
 function postFetch(category_id, original_name, original_price, original_image_url, dupe_name, dupe_price, dupe_image_url) {
   // console.log(category_id, original_name, original_price, original_image_url, dupe_name, dupe_price, dupe_image_url);-works properly
   // make variable to hold body data, key + value are the same so only one is needed
-    // const bodyData = {category_id, category, name}
+    const bodyData = {category_id, original_name, original_price, original_image_url, dupe_name, dupe_price, dupe_image_url}
     fetch(endPoint, {
       // POST request
       method: "POST",
