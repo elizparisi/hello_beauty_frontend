@@ -68,7 +68,45 @@ function createFormHandler(event) {
 }
 
 function postFetch(category_id, original_name, original_price, original_image_url, dupe_name, dupe_price, dupe_image_url) {
-  console.log(category_id, original_name, original_price, original_image_url, dupe_name, dupe_price, dupe_image_url);
+  // console.log(category_id, original_name, original_price, original_image_url, dupe_name, dupe_price, dupe_image_url);-works properly
+  // make variable to hold body data, key + value are the same so only one is needed
+    // const bodyData = {category_id, category, name}
+    fetch(endPoint, {
+      // POST request
+      method: "POST",
+      headers: { "Content-Type": "application/json"},
+      body: JSON.stringify({
+        category_id: category_id,
+        original_name: original_name,
+        original_price: original_price,
+        original_image_url: original_image_url,
+        dupe_name: dupe_name,
+        dupe_price: dupe_price,
+        dupe_image_url: dupe_image_url
+      })
+    })
+    .then(response => response.json())
+    .then(product => {
+      console.log(product);
+      // const productData = product.data
+      // // render JSON response
+      // const productInfo = `
+      //   <div data-id=${product.id}>
+      //     <p>${product.attributes.category.name}</p>
+      //     <img src=${product.attributes.original_image_url} height='200' width='250'/>
+      //     <h4>${product.attributes.original_name}</h4>
+      //     <p>${product.attributes.original_price}</p>
+      //     <br>
+      //     <br>
+      //     <img src=${product.attributes.dupe_image_url} height='200' width='250' />
+      //     <h4>${product.attributes.dupe_name}</h4>
+      //     <p>${product.attributes.dupe_price}</p>
+      //   </div>
+      //   <br>
+      //   <br>`;
+      //
+      // document.querySelector('#product-container').innerHTML += productInfo
+    })
 }
 
 // function postFetch(category_id, original_product_name, original_product_price, original_product_image_url, dupe_product_name, dupe_product_price, dupe_product_image_url) {
