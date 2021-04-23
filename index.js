@@ -13,22 +13,25 @@ function getProducts() {
   .then(response => response.json())
   .then(products => {
     // we don't want to console.log, we want to render the data
-    console.log(products);
-    // products.data.forEach (product => {
-    //   // our data is nested- refer to json info to see how it's nested
-    //   const productInfo = `
-    //     <div data-id=${product.id}>
-    //       <p>${product.attributes.category.name}</p>
-    //       <p>${product.attributes.original_product_image_url}</p>
-    //       <h4>${product.attributes.original_name}</h4>
-    //       <p>${product.attributes.original_price}</p>
-    //       <br>
-    //       <p>${product.attributes.dupe_product_image_url}</p>
-    //       <h4>${product.attributes.dupe_name}</h4>
-    //       <p>${product.attributes.dupe_price}</p>
-    //     </div>`
+    // console.log(products);
+    products.data.forEach (product => {
+    // our data is nested- refer to json info to see how it's nested
+      const productInfo = `
+        <div data-id=${product.id}>
+          <p>${product.attributes.category.name}</p>
+          <img src=${product.attributes.original_image_url} height='200' width='250'/>
+          <h4>${product.attributes.original_name}</h4>
+          <p>${product.attributes.original_price}</p>
+          <br>
+          <br>
+          <img src=${product.attributes.dupe_image_url} height='200' width='250' />
+          <h4>${product.attributes.dupe_name}</h4>
+          <p>${product.attributes.dupe_price}</p>
+        </div>`;
+
+        document.querySelector('#product-container').innerHTML += productInfo
       // render(product)
-  //   })
+    })
   // .catch(error => console.log(error))
   })
 }
