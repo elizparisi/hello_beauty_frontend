@@ -56,9 +56,8 @@ function getProducts() {
 
 function createFormHandler(event) {
   event.preventDefault()
-  // const categoryId = parseInt(document.querySelector('#categories')
-  const categoryInput = document.querySelector('#categories').value
-  const categoryId = parseInt(categoryInput)
+  // we get this data after submit has been triggered
+  const categoryId = parseInt(document.querySelector('#categories').value)
   const originalNameInput = document.querySelector('#original-name-input').value
   const originalPriceInput = document.querySelector('#original-price-input').value
   const originalImageInput = document.querySelector('#orginal-image-input').value
@@ -66,7 +65,7 @@ function createFormHandler(event) {
   const dupePriceInput = document.querySelector('#dupe-price-input').value
   const dupeImageInput = document.querySelector('#dupe-image-input').value
 
-  postFetch(categoryInput, originalNameInput, originalPriceInput, originalImageInput, dupeNameInput, dupePriceInput, dupeImageInput)
+  postFetch(category_id, original_name, original_price, original_image_url, dupe_name, dupe_price, dupe_image_url)
 }
 
 // function postFetch(category_id, original_product_name, original_product_price, original_product_image_url, dupe_product_name, dupe_product_price, dupe_product_image_url) {
