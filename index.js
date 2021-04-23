@@ -101,31 +101,3 @@ function postFetch(category_id, original_name, original_price, original_image_ur
     document.querySelector('#product-container').innerHTML += productInfo
   })
 }
-
-// function postFetch(category_id, original_product_name, original_product_price, original_product_image_url, dupe_product_name, dupe_product_price, dupe_product_image_url) {
-//   console.log(category_id, original_product_name, original_product_price, original_product_image_url, dupe_product_name, dupe_product_price, dupe_product_image_url);
-//   // make variable to hold body data, key + value are the same so only one is needed
-//   // const bodyData = {category_id, category, name}
-//   // fetch(endPoint, {
-//   //   // POST request
-//   //   method: "POST",
-//   //   headers: { "Content-Type": "application/json"},
-//   //   body: JSON.stringify(bodyData)
-//   // })
-//   // .then(response => response.json())
-//   // .then(product => {
-//   //   const productData = product.data
-//   //   // OLD INFO render JSON response
-//   //   // const productInfo =  `
-//   //   //   <div data-id=${product.id}>
-//   //   //     <h4>${product.attributes.name}</h4>
-//   //   //     <p>${product.attributes.category}</p>
-//   //   //     <p>${product.attributes.look.name}</p>
-//   //   //   </div>
-//   //   //   <br>
-//   //   //   <br>`;
-//   //   //
-//   //   //END OLD INFO  document.querySelector('#product-container').innerHTML += productInfo
-//   //   render(productData)
-//   // })
-// }
