@@ -30,6 +30,9 @@ function getProducts() {
       //   </div>`;
       //
       //   document.querySelector('#product-container').innerHTML += productInfo
+      debugger
+      let newProduct = new Product(product);
+
       render(product)
     })
   // .catch(error => console.log(error))
