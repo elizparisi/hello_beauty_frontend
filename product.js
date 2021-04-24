@@ -21,9 +21,9 @@ class Product {
         <p>${this.original_price}</p>
         <br>
         <br>
-        <img src=${this.attributes.dupe_image_url} height='200' width='250' />
-        <h4>${this.attributes.dupe_name}</h4>
-        <p>${this.attributes.dupe_price}</p>
+        <img src=${this.dupe_image_url} height='200' width='250' />
+        <h4>${this.dupe_name}</h4>
+        <p>${this.dupe_price}</p>
       </div>`;
   }
 }
