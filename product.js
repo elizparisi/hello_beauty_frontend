@@ -11,6 +11,21 @@ class Product {
     this.category = productAttributes.category
     Product.all.push(this)
   }
+
+  render() {
+    return `
+      <div data-id=${this.id}>
+        <p>${this.category.name}</p>
+        <img src=${this.original_image_url} height='200' width='250'/>
+        <h4>${this.original_name}</h4>
+        <p>${this.original_price}</p>
+        <br>
+        <br>
+        <img src=${this.attributes.dupe_image_url} height='200' width='250' />
+        <h4>${this.attributes.dupe_name}</h4>
+        <p>${this.attributes.dupe_price}</p>
+      </div>`;
+  }
 }
 
 Product.all = [];
