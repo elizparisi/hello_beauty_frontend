@@ -32,29 +32,16 @@ function getProducts() {
       //   document.querySelector('#product-container').innerHTML += productInfo
       let newProduct = new Product(product, product.attributes)
 
-      render(product)
+      document.querySelector('#product-container').innerHTML += newProduct.render()
+      // render(product)
     })
   // .catch(error => console.log(error))
   })
 }
 
-function render(product) {
-  const productInfo = `
-    <div data-id=${product.id}>
-      <p>${product.attributes.category.name}</p>
-      <img src=${product.attributes.original_image_url} height='200' width='250'/>
-      <h4>${product.attributes.original_name}</h4>
-      <p>${product.attributes.original_price}</p>
-      <br>
-      <br>
-      <img src=${product.attributes.dupe_image_url} height='200' width='250' />
-      <h4>${product.attributes.dupe_name}</h4>
-      <p>${product.attributes.dupe_price}</p>
-    </div>`;
 
-    document.querySelector('#product-container').innerHTML += productInfo
-}
 
+// moved to product.js in Product class
 // function render(product) {
 //   const productInfo = `
 //     <div data-id=${product.id}>
