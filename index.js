@@ -87,7 +87,7 @@ function postFetch(category_id, original_name, original_price, original_image_ur
   .then(response => response.json())
   .then(product => {
     // console.log(product);
-    const productData = product.data.attributes
+    const productData = product.data
     // render JSON response
     // const productInfo = `
     //   <div data-id=${product.id}>
@@ -105,6 +105,9 @@ function postFetch(category_id, original_name, original_price, original_image_ur
     //   <br>`;
     //
     // document.querySelector('#product-container').innerHTML += productInfo
-    render(productData)
+    // render(productData)
+    let newProduct = new Product(productData, productData.attributes)
+
+    document.querySelector('#product-container').innerHTML += newProduct.render()
   })
 }
