@@ -31,7 +31,7 @@ function getProducts() {
       //
       //   document.querySelector('#product-container').innerHTML += productInfo
       debugger
-      let newProduct = new Product(product);
+      let newProduct = new Product(product, product.attributes);
 
       render(product)
     })
