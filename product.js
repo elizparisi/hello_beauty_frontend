@@ -9,5 +9,8 @@ class Product {
     this.dupe_price = productAttributes.dupe_price
     this.dupe_image_url = productAttributes.dupe_image_url
     this.category = productAttributes.category
+    Product.all.push(this)
   }
 }
+
+Product.all = [];
