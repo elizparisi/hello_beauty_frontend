@@ -16,24 +16,41 @@ function getProducts() {
     // console.log(products);
     products.data.forEach (product => {
     // our data is nested- refer to json info to see how it's nested
-      const productInfo = `
-        <div data-id=${product.id}>
-          <p>${product.attributes.category.name}</p>
-          <img src=${product.attributes.original_image_url} height='200' width='250'/>
-          <h4>${product.attributes.original_name}</h4>
-          <p>${product.attributes.original_price}</p>
-          <br>
-          <br>
-          <img src=${product.attributes.dupe_image_url} height='200' width='250' />
-          <h4>${product.attributes.dupe_name}</h4>
-          <p>${product.attributes.dupe_price}</p>
-        </div>`;
-
-        document.querySelector('#product-container').innerHTML += productInfo
-      // render(product)
+      // const productInfo = `
+      //   <div data-id=${product.id}>
+      //     <p>${product.attributes.category.name}</p>
+      //     <img src=${product.attributes.original_image_url} height='200' width='250'/>
+      //     <h4>${product.attributes.original_name}</h4>
+      //     <p>${product.attributes.original_price}</p>
+      //     <br>
+      //     <br>
+      //     <img src=${product.attributes.dupe_image_url} height='200' width='250' />
+      //     <h4>${product.attributes.dupe_name}</h4>
+      //     <p>${product.attributes.dupe_price}</p>
+      //   </div>`;
+      //
+      //   document.querySelector('#product-container').innerHTML += productInfo
+      render(product)
     })
   // .catch(error => console.log(error))
   })
+}
+
+function render(product) {
+  const productInfo = `
+    <div data-id=${product.id}>
+      <p>${product.attributes.category.name}</p>
+      <img src=${product.attributes.original_image_url} height='200' width='250'/>
+      <h4>${product.attributes.original_name}</h4>
+      <p>${product.attributes.original_price}</p>
+      <br>
+      <br>
+      <img src=${product.attributes.dupe_image_url} height='200' width='250' />
+      <h4>${product.attributes.dupe_name}</h4>
+      <p>${product.attributes.dupe_price}</p>
+    </div>`;
+
+    document.querySelector('#product-container').innerHTML += productInfo
 }
 
 // function render(product) {
@@ -83,21 +100,22 @@ function postFetch(category_id, original_name, original_price, original_image_ur
     // console.log(product);
     const productData = product.data.attributes
     // render JSON response
-    const productInfo = `
-      <div data-id=${product.id}>
-        <p>${productData.category.name}</p>
-        <img src=${productData.original_image_url} height='200' width='250'/>
-        <h4>${productData.original_name}</h4>
-        <p>${productData.original_price}</p>
-        <br>
-        <br>
-        <img src=${productData.dupe_image_url} height='200' width='250' />
-          <h4>${productData.dupe_name}</h4>
-          <p>${productData.dupe_price}</p>
-      </div>
-      <br>
-      <br>`;
-
-    document.querySelector('#product-container').innerHTML += productInfo
+    // const productInfo = `
+    //   <div data-id=${product.id}>
+    //     <p>${productData.category.name}</p>
+    //     <img src=${productData.original_image_url} height='200' width='250'/>
+    //     <h4>${productData.original_name}</h4>
+    //     <p>${productData.original_price}</p>
+    //     <br>
+    //     <br>
+    //     <img src=${productData.dupe_image_url} height='200' width='250' />
+    //       <h4>${productData.dupe_name}</h4>
+    //       <p>${productData.dupe_price}</p>
+    //   </div>
+    //   <br>
+    //   <br>`;
+    //
+    // document.querySelector('#product-container').innerHTML += productInfo
+    render(productData)
   })
 }
