@@ -30,29 +30,18 @@ function getProducts() {
       //   </div>`;
       //
       //   document.querySelector('#product-container').innerHTML += productInfo
-      render(product)
+      let newProduct = new Product(product, product.attributes)
+
+      document.querySelector('#product-container').innerHTML += newProduct.render()
+      // render(product)
     })
   // .catch(error => console.log(error))
   })
 }
 
-function render(product) {
-  const productInfo = `
-    <div data-id=${product.id}>
-      <p>${product.attributes.category.name}</p>
-      <img src=${product.attributes.original_image_url} height='200' width='250'/>
-      <h4>${product.attributes.original_name}</h4>
-      <p>${product.attributes.original_price}</p>
-      <br>
-      <br>
-      <img src=${product.attributes.dupe_image_url} height='200' width='250' />
-      <h4>${product.attributes.dupe_name}</h4>
-      <p>${product.attributes.dupe_price}</p>
-    </div>`;
 
-    document.querySelector('#product-container').innerHTML += productInfo
-}
 
+// moved to product.js in Product class
 // function render(product) {
 //   const productInfo = `
 //     <div data-id=${product.id}>
@@ -98,7 +87,7 @@ function postFetch(category_id, original_name, original_price, original_image_ur
   .then(response => response.json())
   .then(product => {
     // console.log(product);
-    const productData = product.data.attributes
+    const productData = product.data
     // render JSON response
     // const productInfo = `
     //   <div data-id=${product.id}>
@@ -116,6 +105,9 @@ function postFetch(category_id, original_name, original_price, original_image_ur
     //   <br>`;
     //
     // document.querySelector('#product-container').innerHTML += productInfo
-    render(productData)
+    // render(productData)
+    let newProduct = new Product(productData, productData.attributes)
+
+    document.querySelector('#product-container').innerHTML += newProduct.render()
   })
 }
