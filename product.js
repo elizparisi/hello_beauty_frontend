@@ -16,12 +16,12 @@ class Product {
     return `
       <div data-id=${this.id}>
         <p>${this.category.name}</p>
-        <img src=${this.original_image_url} height='350' width='375'/>
+        <img src=${this.original_image_url} height='375' width='350'/>
         <h4>${this.original_name}</h4>
         <p>${this.original_price}</p>
         <br>
         <br>
-        <img src=${this.dupe_image_url} height='350' width='375' />
+        <img src=${this.dupe_image_url} height='375' width='350' />
         <h4>${this.dupe_name}</h4>
         <p>${this.dupe_price}</p>
       </div>`;
