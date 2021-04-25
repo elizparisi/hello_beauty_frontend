@@ -1,5 +1,6 @@
-.site-title {
+.title {
   padding: 10px;
+  font-size: 25px;
 }
 
 .jumbotron {
@@ -27,8 +28,9 @@
   max-width: 40rem;
 }
 
-body {
-  background-color: #f08080;
+.card-img-top {
+  width: 450px;
+  height: 475px;
 }
 
 footer {
