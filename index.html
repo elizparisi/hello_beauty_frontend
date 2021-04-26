@@ -1,139 +1,114 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.82.0">
-    <title>HELLO, BEAUTY.</title>
+<head>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<meta content="" name="description">
+	<meta content="Mark Otto, Jacob Thornton, and Bootstrap contributors" name="author">
+	<meta content="Hugo 0.82.0" name="generator">
+	<title>HELLO, BEAUTY.</title>
 
-<!-- JS Project tags -->
-    <script type="text/javascript" src="product.js"></script>
-    <script type="text/javascript" src="index.js"></script>
+  <!-- JS Project tags -->
+	<script src="product.js" type="text/javascript">
+	</script>
+	<script src="index.js" type="text/javascript">
+	</script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"><!-- Bootstrap core CSS -->
+	<link href="index.css" rel="stylesheet">
+	<style>
+	     .bd-placeholder-img {
+	       font-size: 1.125rem;
+	       text-anchor: middle;
+	       -webkit-user-select: none;
+	       -moz-user-select: none;
+	       user-select: none;
+	     }
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-
-
-
-    <!-- Bootstrap core CSS -->
-<link href="index.css" rel="stylesheet">
-
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
-
-    <style>
-    @import url('https://fonts.googleapis.com/css2?family=Arimo&display=swap');
-    </style>
-  </head>
-  <body>
-
-<header>
-  <div class="collapse bg-dark" id="navbarHeader">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-8 col-md-7 py-4">
-          <h4 class="text-white">About</h4>
-          <p class="text-muted">The world of beauty products is endless. Share and discover affordable alternatives to your favorite bestsellers. Find products that work for less...it's that simple. Hello to Beauty.</p>
-        </div>
-        <div class="col-sm-4 offset-md-1 py-4">
-          <!-- <h4 class="text-white">Contact</h4>
+	     @media (min-width: 768px) {
+	       .bd-placeholder-img-lg {
+	         font-size: 3.5rem;
+	       }
+	     }
+	</style>
+	<style>
+	   @import url('https://fonts.googleapis.com/css2?family=Arimo&display=swap');
+	</style>
+</head>
+<body>
+	<header>
+		<div class="collapse bg-dark" id="navbarHeader">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-8 col-md-7 py-4">
+						<h4 class="text-white">About</h4>
+						<p class="text-muted">The world of beauty products is endless. Share and discover affordable alternatives to your favorite bestsellers. Find products that work for less...it's that simple. Hello to Beauty.</p>
+					</div>
+					<div class="col-sm-4 offset-md-1 py-4">
+						<!-- <h4 class="text-white">Contact</h4>
           <ul class="list-unstyled">
             <li><a href="#" class="text-white">Follow on Twitter</a></li>
             <li><a href="#" class="text-white">Like on Facebook</a></li>
             <li><a href="#" class="text-white">Email me</a></li>
           </ul> -->
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="navbar navbar-dark bg-dark shadow-sm">
-    <div class="container">
-      <a href="#" class="navbar-brand d-flex align-items-center">
-        <strong class="title">HELLO, BEAUTY.</strong>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    </div>
-  </div>
-</header>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="navbar navbar-dark bg-dark shadow-sm">
+			<div class="container">
+				<a class="navbar-brand d-flex align-items-center" href="#"><strong class="title">HELLO, BEAUTY.</strong></a> <button aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarHeader" data-bs-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+			</div>
+		</div>
+	</header>
+	<main>
+		<section class="jumbotron text-center">
+			<div class="row py-lg-5">
+				<div class="col-lg-6 col-md-8 mx-auto">
+					<div class="form-style">
+						<form id="create-product-form" name="create-product-form">
+							<h1 class="page-opener">GIVE US THE GOODS</h1>
+							<h2 class="page-opener">Share Your Favorite Dupe With Us!</h2>
 
-<main>
+              <h5>Choose Product Category</h5>
+                <select aria-label="Default select example" class="form-select" id='categories' name='categories'>
 
-  <section class="jumbotron text-center">
-    <div class="row py-lg-5">
-      <div class="col-lg-6 col-md-8 mx-auto">
-
-        <div class="form-style">
-        <form id="create-product-form">
-
-        <h1 class="page-opener">GIVE US THE GOODS</h1>
-        <h2 class="page-opener">Share Your Favorite Dupe With Us!</h2>
-
-        <h5>Choose Product Category</h5>
-        <select id='categories' name='categories' class="form-select" aria-label="Default select example">
-            <option selected>Open this select menu</option>
-            <option value="1">Skin</option>
-            <option value="2">Face</option>
-            <option value="3">Eyes</option>
-            <option value="4">Lips</option>
-            <option value="5">Hair</option>
-        </select>
-        <br>
-
-        <h5>Enter Original Product Info</h5>
-        <div class="mb-3">
-          <input id="original-name-input" type="text" class="form-control" placeholder="original product name">
-        </div>
-
-        <div class="mb-3">
-          <input id="original-price-input" type="number" step="any" class="form-control" id="formGroupExampleInput2" placeholder="original product price">
-        </div>
-
-        <div class="mb-3">
-          <input id="original-image-input" type="text" class="form-control" id="formGroupExampleInput2" placeholder="original product image url">
-        </div>
-
-        <h5>Enter Dupe Product Info</h5>
-        <div class="mb-3">
-          <input id="dupe-name-input" type="text" class="form-control" placeholder="dupe product name">
-        </div>
-
-        <div class="mb-3">
-          <input id="dupe-price-input" type="number" step="any" class="form-control" id="formGroupExampleInput2" placeholder="dupe product price">
-        </div>
-
-        <div class="mb-3">
-          <input id="dupe-image-input" type="text" class="form-control" id="formGroupExampleInput2" placeholder="dupe product image url">
-        </div>
-
-        <button type="submit" class="btn btn-light">Create</button>
-
-        </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="album py-5 bg-light">
-    <div class="container" id='product-container'>
-
-      <div class="row">
-  <!-- <div class="col-sm-6">
+                  <option selected>Open this select menu</option>
+								  <option value="1">Skin</option>
+								  <option value="2">Face</option>
+								  <option value="3">Eyes</option>
+								  <option value="4">Lips</option>
+								  <option value="5">Hair</option>
+							  </select><br>
+                
+							<h5>Enter Original Product Info</h5>
+							<div class="mb-3">
+								<input class="form-control" id="original-name-input" placeholder="original product name" type="text">
+							</div>
+							<div class="mb-3">
+								<input class="form-control" id="formGroupExampleInput2" placeholder="original product price" step="any" type="number">
+							</div>
+							<div class="mb-3">
+								<input class="form-control" id="formGroupExampleInput2" placeholder="original product image url" type="text">
+							</div>
+							<h5>Enter Dupe Product Info</h5>
+							<div class="mb-3">
+								<input class="form-control" id="dupe-name-input" placeholder="dupe product name" type="text">
+							</div>
+							<div class="mb-3">
+								<input class="form-control" id="formGroupExampleInput2" placeholder="dupe product price" step="any" type="number">
+							</div>
+							<div class="mb-3">
+								<input class="form-control" id="formGroupExampleInput2" placeholder="dupe product image url" type="text">
+							</div><button class="btn btn-light" type="submit">Create</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+		<div class="album py-5 bg-light">
+			<div class="container" id='product-container'>
+				<div class="row">
+					<!-- <div class="col-sm-6">
     <div class="card">
       <div class="card shadow-sm">
         <img src="..." class="card-img-top" alt="...">
@@ -146,7 +121,7 @@
     </div>
   </div>
   </div> -->
-  <!-- <div class="col-sm-6">
+					<!-- <div class="col-sm-6">
     <div class="card">
       <div class="card shadow-sm">
         <img src="..." class="card-img-top" alt="...">
@@ -159,26 +134,22 @@
     </div>
   </div>
 </div> -->
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer class="text-muted py-5">
+		<div class="container">
+			<p class="float-end mb-1"><a href="#">Back to top</a></p>
+			<p class="mb-1">Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
+		</div>
+	</footer>
 
-        </div>
-      </div>
-    </div>
+  <!-- Bootstrap -->
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js">
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js">
+	</script>
 
-</main>
-
-<footer class="text-muted py-5">
-  <div class="container">
-    <p class="float-end mb-1">
-      <a href="#">Back to top</a>
-    </p>
-    <p class="mb-1">Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-  </div>
-</footer>
-
-    <!-- Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
-
-
-  </body>
+</body>
 </html>
