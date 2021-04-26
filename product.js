@@ -28,32 +28,34 @@ class Product {
     return `
     <div class="row">
     <div class="col-sm-6">
-      <div class="card">
+      <div class="card" style="18rem";>
         <div class="card shadow-sm">
           <img src=${this.original_image_url} class="card-img-top" alt="..." height='375' width='350'>
         <div class="card-body">
           <h5 class="card-title">${this.original_name}</h5>
           <p class="card-text">$${this.original_price}</p>
-          <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+          <br>
           <small class="text-muted">Category: ${this.category.name}</small>
         </div>
       </div>
     </div>
     </div>
     <div class="col-sm-6">
-      <div class="card">
+      <div class="card" style="18rem";>
         <div class="card shadow-sm">
           <img src=${this.dupe_image_url} class="card-img-top" alt="..." height='375' width='350'>
         <div class="card-body">
           <h5 class="card-title">${this.dupe_name}</h5>
           <p class="card-text">$${this.dupe_price}</p>
-          <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+          <br>
           <small class="text-muted">Category: ${this.category.name}</small>
         </div>
       </div>
     </div>
   </div>
   </div>
+  <br>
+  <br>
     `
   }
 }
