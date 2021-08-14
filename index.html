@@ -85,7 +85,7 @@
 								<input class="form-control" id="original-name-input" placeholder="original product name" type="text">
 							</div>
 							<div class="mb-3">
-								<input class="form-control" id="original-price-input" placeholder="original product price" step="any" type="number">
+								<input class="form-control" id="original-price-input" placeholder="original product price" step=".01" type="number">
 							</div>
 							<div class="mb-3">
 								<input class="form-control" id="original-image-input" placeholder="original product image url" type="text">
@@ -95,7 +95,7 @@
 								<input class="form-control" id="dupe-name-input" placeholder="dupe product name" type="text">
 							</div>
 							<div class="mb-3">
-								<input class="form-control" id="dupe-price-input" placeholder="dupe product price" step="any" type="number">
+								<input class="form-control" id="dupe-price-input" placeholder="dupe product price" step=".01" type="number">
 							</div>
 							<div class="mb-3">
 								<input class="form-control" id="dupe-image-input" placeholder="dupe product image url" type="text">
@@ -107,6 +107,7 @@
 		</section>
 		<div class="album py-5 bg-light">
 			<div class="container" id='product-container'>
+        <button id="dark-mode">Toggle Dark</button>
 				<div class="row">
 					<!-- <div class="col-sm-6">
     <div class="card">
