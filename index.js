@@ -7,11 +7,31 @@ document.addEventListener('DOMContentLoaded', () => {
   const createProductForm = document.querySelector('#create-product-form')
 
   createProductForm.addEventListener('submit', (event) => createFormHandler(event))
+
+  const darkMode = document.querySelector('#dark-mode')
+
+  darkMode.addEventListener('click', function() {
+    //console.log("does this work")
+
+    //document.body.style.backgroundColor = "black"
+    if (document.body.style.backgroundColor === "white") {
+      document.body.style.backgroundColor = "black";
+    } else {
+      document.body.style.backgroundColor = "white"
+    }
+  })
 })
+
+
+function handleClick(event) {
+  console.log("does this work")
+}
 
 function getProducts() {
 
-  fetch(endPoint).then(response => response.json()).then(products => {
+  fetch(endPoint)
+  .then(response => response.json())
+  .then(products => {
 		// we don't want to console.log, we want to render the data
 		// console.log(products);
 		products.data.forEach(product => {
@@ -70,9 +90,11 @@ function createFormHandler(event) {
 	postFetch(categoryId, originalNameInput, originalPriceInput, originalImageInput, dupeNameInput, dupePriceInput, dupeImageInput)
 }
 
+
 function postFetch(category_id, original_name, original_price, original_image_url, dupe_name, dupe_price, dupe_image_url) {
 	// console.log(category_id, original_name, original_price, original_image_url, dupe_name, dupe_price, dupe_image_url);-works properly
 	// make variable to hold body data, key + value are the same so only one is needed
+  let productForm = document.getElementById('create-product-form')
 	const bodyData = {
 		category_id,
 		original_name,
@@ -88,8 +110,9 @@ function postFetch(category_id, original_name, original_price, original_image_ur
 		headers: {
 			"Content-Type": "application/json"
 		},
-		body: JSON.stringify(bodyData)
-	}).then(response => response.json()).then(product => {
+		body: JSON.stringify(bodyData)})
+    .then(response => response.json())
+    .then(product => {
 		// console.log(product);
 		const productData = product.data
 		// render JSON response
@@ -114,4 +137,5 @@ function postFetch(category_id, original_name, original_price, original_image_ur
 
     document.querySelector('#product-container').innerHTML += newProduct.render()
 	})
+  productForm.reset()
 }
