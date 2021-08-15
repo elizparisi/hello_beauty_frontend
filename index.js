@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   createProductForm.addEventListener('submit', (event) => createFormHandler(event))
 
+  const searchForm = document.querySelector('.search-box')
+  let searchTerm = ''
+
   const darkMode = document.querySelector('#dark-mode')
 
   darkMode.addEventListener('click', function() {
@@ -22,6 +25,14 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 })
 
+searchForm.addEventListener('input', event => {
+  event.preventDefault()
+  searchTerm = event.target.value.toLowerCase()
+  let searchResult = filteredProducts.filter(filteredProduct => {
+    return filteredProduct.name.toLowerCase().includes(searchTerm)
+  })
+  getProducts(searchResult)
+})
 
 function handleClick(event) {
   console.log("does this work")
@@ -54,6 +65,7 @@ function getProducts() {
 
       document.querySelector('#product-container').innerHTML += newProduct.render()
 			// render(product)
+      filteredProducts = Products
 		})
 		// .catch(error => console.log(error))
 	})
@@ -76,8 +88,8 @@ function getProducts() {
 //
 //     document.querySelector('#product-container').innerHTML += productInfo
 // }
-function createFormHandler(event) {
 
+function createFormHandler(event){
   event.preventDefault()
 	// we get this data after submit has been triggered
 	const categoryId = parseInt(document.querySelector('#categories').value)
